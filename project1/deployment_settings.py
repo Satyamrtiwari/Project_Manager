@@ -6,7 +6,10 @@ from .settings import *
 from .settings import BASE_DIR
 
 ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]    
-CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
+CSRF_TRUSTED_ORIGINS = [
+    'https://' + os.environ.get('RENDER_EXTERNAL_HOSTNAME'),
+    'https://project-manager-frontend-6tqs.onrender.com',
+]
 
 DEBUG = False
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -25,8 +28,11 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://project-manager-4-cycf.onrender.com"
+    "https://project-manager-frontend-6tqs.onrender.com",
+    "https://project-manager-4-cycf.onrender.com",
 ]
+
+CORS_ALLOW_CREDENTIALS = True
 
 STORAGES ={
     "default":{
